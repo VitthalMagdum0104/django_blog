@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock title %}
+{% block homeactive %} active {% endblock homeactive %}
+
+{% block body %}
+<div class="container">
+    <div class="jumbotron my-3">
+        <h1 class="display-4">Welcome to Blogger!</h1>
+        <p class="lead">Here We provides a platform to represent your Knowledge through Your Blogs.</p>
+        <hr class="my-4">
+        <p>You can check our blogs here.</p>
+        <a class="btn btn-primary btn-lg" href="/blog" role="button">Go to Blog</a>
+    </div>
+</div>
+<div class="container">
+    <a style="background-color:blue;border-colour=red;" class="btn btn-primary btn-lg"  role="button"><h2>Popular Blogposts</h2></a>
+    
+    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <br>
+        <img src="https://cdn.vox-cdn.com/thumbor/5_topR-lGjqjyMy9wpX32tCDPKk=/1400x1050/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/8487069/jbareham_170509_1677_0143_v02.jpg" width="70%" style="padding-left: 400px;">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>{{blog.title}}</h5>
+          <p>{{blog.author}}</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <br>
+        <img src="https://img.etimg.com/thumb/width-640,height-480,imgsize-37560,resizemode-1,msid-65449681/wealth/spend/whats-the-cost-of-studying-in-popular-foreign-countries/education2-getty-images.jpg" width="70%" style="padding-left: 400px;">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>{{blog2.title}}</h5>
+          <p>{{blog2.author}}</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <br>
+        <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c3R1ZHl8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80" width="70%" style="padding-left: 400px;">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>{{blog2.title}}</h5>
+          <p>{{blog3.author}}</p>
+        </div>
+      </div>
+
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+    <!--
+    {% for blog in blog  %}
+    <div
+        class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 my-4 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+            <strong class="d-inline-block mb-2 text-primary">{{blog.author}}</strong>
+            <h3 class="mb-0">{{blog.title}}</h3>
+            <div class="mb-1 text-muted">{{blog.timeStamp}}</div>
+            <p class="card-text mb-auto">{{blog.content | truncatechars:500}}</p>
+            <div class="my-2">
+                <a href="/blog/{{blog.slug}}" role="button" class="btn btn-primary">Continue reading</a>
+            </div>
+        </div>
+        
+    </div>
+    {% endfor %}
+    -->
+</div>
+{% endblock body %}
